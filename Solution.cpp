@@ -99,10 +99,44 @@ int Solution::makeConnected(int n, vector<vector<int>> &connections) {
     int count = 0;
     set<int> st;
     for (vector<int> c : connections) {
-        if (!st.count(c[0]) and !st.count(c[1])) {
-
+        if (!st.count(c[0]) or !st.count(c[1])) {
+            st.insert(c[0]);
+            st.insert(c[1]);
+        } else {
+            ++count;
         }
     }
 
-    return 0;
+    if (n - st.size() <= count) {
+        return n - st.size();
+    } else {
+        return -1;
+    }
+}
+
+// https://www.codewars.com/kata/57eaec5608fed543d6000021/train/cpp
+int Solution::divCon(const vector<std::variant<int, char>> &x) {
+    int result = 0;
+    for (variant<int, char> v : x) {
+        if (v.index() == 0) {
+            result += std::get<int>(v);
+        } else {
+            result -= std::get<char>(v) - 48;
+        }
+    }
+    return result;
+}
+
+// https://www.codewars.com/kata/5a6663e9fd56cb5ab800008b/train/cpp
+std::vector<int> Solution::humanYearsCatYearsDogYears(int humanYears) {
+    vector<int> result;
+
+    if (humanYears == 1) {
+        result = {1, 15, 15};
+    } else if (humanYears == 2) {
+        result = {2, 24, 24};
+    } else {
+        result = {humanYears, (humanYears - 2) * 4 + 24, (humanYears - 2) * 5 + 24};
+    }
+    return result;
 }
