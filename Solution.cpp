@@ -6,7 +6,7 @@
 
 #include "Solution.h"
 
-vector<int> Solution::sortArray(vector<int> &nums) {
+std::vector<int> Solution::sortArray(std::vector<int> &nums) {
 
     bool isSorted = false;
     int index = 0;
@@ -24,7 +24,7 @@ vector<int> Solution::sortArray(vector<int> &nums) {
     return nums;
 }
 
-int Solution::compress(vector<char> &chars) {
+int Solution::compress(std::vector<char> &chars) {
 
     char temp = '\0';
     int count = 0;
@@ -41,7 +41,7 @@ int Solution::compress(vector<char> &chars) {
     return count;
 }
 
-int Solution::findKthPositive(vector<int> &arr, int k) {
+int Solution::findKthPositive(std::vector<int> &arr, int k) {
 
     int result = 0, i = 0;
     while (k != 0) {
@@ -56,7 +56,7 @@ int Solution::findKthPositive(vector<int> &arr, int k) {
     return result;
 }
 
-bool Solution::canPlaceFlowers(vector<int> &flowerbed, int n) {
+bool Solution::canPlaceFlowers(std::vector<int> &flowerbed, int n) {
     bool result = false;
 
     for (int i : flowerbed) {
@@ -77,7 +77,7 @@ double calculateTriangleNumbers(int &n) {
 }
 
 
-long long Solution::zeroFilledSubarray(vector<int> &nums) {
+long long Solution::zeroFilledSubarray(std::vector<int> &nums) {
 
     long long result = 0;
     for (int i = 0, temp = 0; i < nums.size(); ++i) {
@@ -94,11 +94,11 @@ long long Solution::zeroFilledSubarray(vector<int> &nums) {
 
 }
 
-int Solution::makeConnected(int n, vector<vector<int>> &connections) {
+int Solution::makeConnected(int n, std::vector<std::vector<int>> &connections) {
 
     int count = 0;
-    set<int> st;
-    for (vector<int> c : connections) {
+    std::set<int> st;
+    for (std::vector<int> c : connections) {
         if (!st.count(c[0]) or !st.count(c[1])) {
             st.insert(c[0]);
             st.insert(c[1]);
@@ -115,9 +115,9 @@ int Solution::makeConnected(int n, vector<vector<int>> &connections) {
 }
 
 // https://www.codewars.com/kata/57eaec5608fed543d6000021/train/cpp
-int Solution::divCon(const vector<std::variant<int, char>> &x) {
+int Solution::divCon(const std::vector<std::variant<int, char>> &x) {
     int result = 0;
-    for (variant<int, char> v : x) {
+    for (std::variant<int, char> v : x) {
         if (v.index() == 0) {
             result += std::get<int>(v);
         } else {
@@ -129,7 +129,7 @@ int Solution::divCon(const vector<std::variant<int, char>> &x) {
 
 // https://www.codewars.com/kata/5a6663e9fd56cb5ab800008b/train/cpp
 std::vector<int> Solution::humanYearsCatYearsDogYears(int humanYears) {
-    vector<int> result;
+    std::vector<int> result;
 
     if (humanYears == 1) {
         result = {1, 15, 15};
@@ -139,4 +139,28 @@ std::vector<int> Solution::humanYearsCatYearsDogYears(int humanYears) {
         result = {humanYears, (humanYears - 2) * 4 + 24, (humanYears - 2) * 5 + 24};
     }
     return result;
+}
+
+// https://www.codewars.com/kata/563cf89eb4747c5fb100001b/train/cpp
+std::vector<unsigned int> Solution::removeSmallest(const std::vector<unsigned int> &numbers) {
+
+    if (numbers.empty()) {
+        return numbers;
+    }
+
+    std::vector<unsigned int> copyNumbers;
+    std::pair<unsigned int, unsigned int> deletedElement (0, numbers[0]);
+
+    for (int i = 0; i < numbers.size(); ++i) {
+        if (deletedElement.second > numbers[i]) {
+            deletedElement.first = i;
+            deletedElement.second = numbers[i];
+        }
+        copyNumbers.push_back(numbers[i]);
+    }
+
+    copyNumbers.erase(copyNumbers.begin() + deletedElement.first);
+
+    return copyNumbers;
+
 }

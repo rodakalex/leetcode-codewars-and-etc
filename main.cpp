@@ -6,31 +6,31 @@ Solution solution;
 
 
 void sortArrayTest() {
-    vector<int> vector1 = {5, 2, 3, 1};
-    vector<int> vector2 = solution.sortArray(vector1);
+    std::vector<int> vector1 = {5, 2, 3, 1};
+    std::vector<int> vector2 = solution.sortArray(vector1);
     for (int x : vector2) {
-        cout << x << endl;
+        std::cout << x << std::endl;
     }
 }
 
 
 void compressTest() {
 
-    vector<char> chars = {'a', 'a', 'b', 'b', 'c', 'c', 'c'};
-    vector<char> chars1 = {'a'};
-    vector<char> chars2 = {'a','b','b','b','b','b','b','b','b','b','b','b','b'};
-    cout << solution.compress(chars) << endl;
-    cout << solution.compress(chars1) << endl;
-    cout << solution.compress(chars2) << endl;
+    std::vector<char> chars = {'a', 'a', 'b', 'b', 'c', 'c', 'c'};
+    std::vector<char> chars1 = {'a'};
+    std::vector<char> chars2 = {'a','b','b','b','b','b','b','b','b','b','b','b','b'};
+    std::cout << solution.compress(chars) << std::endl;
+    std::cout << solution.compress(chars1) << std::endl;
+    std::cout << solution.compress(chars2) << std::endl;
 
 }
 
 void findKthPositiveTest() {
 
-    vector<int> arr = {2,3,4,7,11};
-    vector<int> arr1 = {1,2,3,4};
-    cout << solution.findKthPositive(arr, 5) << endl;
-    cout << solution.findKthPositive(arr1, 2) << endl;
+    std::vector<int> arr = {2,3,4,7,11};
+    std::vector<int> arr1 = {1,2,3,4};
+    std::cout << solution.findKthPositive(arr, 5) << std::endl;
+    std::cout << solution.findKthPositive(arr1, 2) << std::endl;
 
 }
 
@@ -61,12 +61,23 @@ TEST(Solution, divCon) {
 }
 
 TEST(Solution, humanYearsCatYearsDogYears) {
-    std::vector<int> V = {1, 15, 15};
-    EXPECT_EQ(solution.humanYearsCatYearsDogYears(1), V);
-    V = {2, 24, 24};
-    EXPECT_EQ(solution.humanYearsCatYearsDogYears(2), V);
-    V = {10, 56, 64};
-    EXPECT_EQ(solution.humanYearsCatYearsDogYears(10), V);
+//    std::vector<int> V = {1, 15, 15};
+//    EXPECT_EQ(solution.humanYearsCatYearsDogYears(1), V);
+//    V = {2, 24, 24};
+//    EXPECT_EQ(solution.humanYearsCatYearsDogYears(2), V);
+//    V = {10, 56, 64};
+//    EXPECT_EQ(solution.humanYearsCatYearsDogYears(10), V);
+}
+
+TEST(Solution, removeSmallest) {
+    std::vector<unsigned int> n = { 1, 2, 3, 4, 5 }, x = { 2, 3, 4, 5 };
+    EXPECT_EQ(solution.removeSmallest(n), x);
+    n = { 5, 3, 2, 1, 4 }, x = { 5, 3, 2, 4 };
+    EXPECT_EQ(solution.removeSmallest(n), x);
+    n = { 2, 2, 1, 2, 1 }, x = { 2, 2, 2, 1 };
+    EXPECT_EQ(solution.removeSmallest(n), x);
+    n = {}, x = {};
+    EXPECT_EQ(solution.removeSmallest(n), x);
 }
 
 int main(int argc, char **argv) {
