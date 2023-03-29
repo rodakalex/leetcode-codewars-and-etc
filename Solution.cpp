@@ -29,7 +29,7 @@ int Solution::compress(std::vector<char> &chars) {
     char temp = '\0';
     int count = 0;
 
-    for (char c : chars) {
+    for (char c: chars) {
         if (c == temp) {
             ++count;
         } else if (temp != '\0' and c != temp) {
@@ -59,7 +59,7 @@ int Solution::findKthPositive(std::vector<int> &arr, int k) {
 bool Solution::canPlaceFlowers(std::vector<int> &flowerbed, int n) {
     bool result = false;
 
-    for (int i : flowerbed) {
+    for (int i: flowerbed) {
         if (i == 0) {
             --n;
         }
@@ -68,14 +68,12 @@ bool Solution::canPlaceFlowers(std::vector<int> &flowerbed, int n) {
     return result;
 }
 
-
 double calculateTriangleNumbers(int &n) {
 
     double result = 0.5 * n * (n + 1);
     return result;
 
 }
-
 
 long long Solution::zeroFilledSubarray(std::vector<int> &nums) {
 
@@ -98,7 +96,7 @@ int Solution::makeConnected(int n, std::vector<std::vector<int>> &connections) {
 
     int count = 0;
     std::set<int> st;
-    for (std::vector<int> c : connections) {
+    for (std::vector<int> c: connections) {
         if (!st.count(c[0]) or !st.count(c[1])) {
             st.insert(c[0]);
             st.insert(c[1]);
@@ -117,7 +115,7 @@ int Solution::makeConnected(int n, std::vector<std::vector<int>> &connections) {
 // https://www.codewars.com/kata/57eaec5608fed543d6000021/train/cpp
 int Solution::divCon(const std::vector<std::variant<int, char>> &x) {
     int result = 0;
-    for (std::variant<int, char> v : x) {
+    for (std::variant<int, char> v: x) {
         if (v.index() == 0) {
             result += std::get<int>(v);
         } else {
@@ -149,7 +147,7 @@ std::vector<unsigned int> Solution::removeSmallest(const std::vector<unsigned in
     }
 
     std::vector<unsigned int> copyNumbers;
-    std::pair<unsigned int, unsigned int> deletedElement (0, numbers[0]);
+    std::pair<unsigned int, unsigned int> deletedElement(0, numbers[0]);
 
     for (int i = 0; i < numbers.size(); ++i) {
         if (deletedElement.second > numbers[i]) {
@@ -164,3 +162,49 @@ std::vector<unsigned int> Solution::removeSmallest(const std::vector<unsigned in
     return copyNumbers;
 
 }
+
+// https://www.codewars.com/kata/586d6cefbcc21eed7a001155/train/cpp
+// Don't solve
+std::optional<std::pair<char, unsigned int>> Solution::longestRepetition(const std::string &str) {
+    if (str.empty()) {
+        return std::nullopt;
+    }
+
+    unsigned int bestShotCount = 0, counter = 0;
+    char bestShotChar = str[0], preChar = str[0];
+
+    for (char c: str) {
+        if (preChar == c and counter > bestShotChar) {
+            ++bestShotCount;
+            bestShotChar = c;
+            preChar = c;
+            counter = 0;
+        } else {
+            ++counter;
+            preChar = c;
+        }
+    }
+
+    std::optional<std::pair<char, unsigned int>> result ({bestShotChar, bestShotCount});
+
+    return result;
+}
+
+// https://www.codewars.com/kata/52efefcbcdf57161d4000091/train/cpp
+std::map<char, unsigned int> Solution::count(const std::string &string) {
+
+    std::map<char, unsigned int> result;
+
+    for (char c : string) {
+        auto it = result.find(c);
+        if (it == result.end()) {
+            result.insert(std::make_pair(c, 1));
+        } else {
+            ++it->second;
+        }
+    }
+
+    return result;
+
+}
+

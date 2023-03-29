@@ -7,7 +7,8 @@
 
 #include <variant>
 #include <vector>
-
+#include <optional>
+#include <map>
 
 class Solution {
 
@@ -21,6 +22,8 @@ public:
     int divCon(const std::vector<std::variant<int, char>>& x);
     std::vector<int> humanYearsCatYearsDogYears(int humanYears);
     std::vector<unsigned int> removeSmallest(const std::vector<unsigned int>& numbers);
+    std::optional<std::pair<char, unsigned int>> longestRepetition(const std::string &str);
+    std::map<char, unsigned> count(const std::string& string);
 };
 
 
