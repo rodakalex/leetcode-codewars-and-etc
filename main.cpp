@@ -5,11 +5,13 @@
 Solution solution;
 
 void sortArrayTest() {
+
     std::vector<int> vector1 = {5, 2, 3, 1};
     std::vector<int> vector2 = solution.sortArray(vector1);
     for (int x : vector2) {
         std::cout << x << std::endl;
     }
+
 }
 
 
@@ -134,6 +136,18 @@ TEST(Solution, count) {
 
 }
 
+
+TEST(Solution, remove_parentheses) {
+
+    EXPECT_EQ(solution.remove_parentheses("example(unwanted thing)example"), "exampleexample");
+    EXPECT_EQ(solution.remove_parentheses("example(unwanted thing)example"), "exampleexample");
+    EXPECT_EQ(solution.remove_parentheses("example (unwanted thing) example"), "example  example");
+    EXPECT_EQ(solution.remove_parentheses("a (bc d)e"), "a e");
+    EXPECT_EQ(solution.remove_parentheses("a(b(c))"), "a");
+    EXPECT_EQ(solution.remove_parentheses("hello example (words(more words) here) something"), "hello example  something");
+    EXPECT_EQ(solution.remove_parentheses("(first group) (second group) (third group)"), "  ");
+
+}
 
 int main(int argc, char **argv) {
 

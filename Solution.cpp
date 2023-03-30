@@ -208,3 +208,22 @@ std::map<char, unsigned int> Solution::count(const std::string &string) {
 
 }
 
+// https://www.codewars.com/kata/5f7c38eb54307c002a2b8cc8/train/cpp
+std::string Solution::remove_parentheses(const std::string &str) {
+
+    int stop = 0;
+    std::string result;
+
+    for (char c : str) {
+        if (c == '(') {
+            ++stop;
+        } else if (c == ')' and stop) {
+            --stop;
+        } else if (!stop) {
+            result += c;
+        }
+    }
+
+    return result;
+
+}
