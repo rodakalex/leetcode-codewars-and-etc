@@ -164,30 +164,39 @@ std::vector<unsigned int> Solution::removeSmallest(const std::vector<unsigned in
 }
 
 // https://www.codewars.com/kata/586d6cefbcc21eed7a001155/train/cpp
-// Don't solve
+void updateBestLongestRepetition (unsigned int count, char pre, unsigned int &best, char &bestChar);
+
 std::optional<std::pair<char, unsigned int>> Solution::longestRepetition(const std::string &str) {
+
     if (str.empty()) {
         return std::nullopt;
     }
 
-    unsigned int bestShotCount = 0, counter = 0;
-    char bestShotChar = str[0], preChar = str[0];
+    unsigned int count = 0, best = 0;
+    char pre = '\0', bestChar = '\0';
 
     for (char c: str) {
-        if (preChar == c and counter > bestShotChar) {
-            ++bestShotCount;
-            bestShotChar = c;
-            preChar = c;
-            counter = 0;
-        } else {
-            ++counter;
-            preChar = c;
+        if (c != pre) {
+            updateBestLongestRepetition(count, pre, best, bestChar);
+            count = 0;
         }
+        pre = c;
+        ++count;
     }
 
-    std::optional<std::pair<char, unsigned int>> result ({bestShotChar, bestShotCount});
+    updateBestLongestRepetition(count, pre, best, bestChar);
+
+    std::optional<std::pair<char, unsigned int>> result ({bestChar, best});
 
     return result;
+
+}
+
+void updateBestLongestRepetition(unsigned int count, char pre, unsigned int &best, char &bestChar) {
+    if (count > best) {
+        best = count;
+        bestChar = pre;
+    }
 }
 
 // https://www.codewars.com/kata/52efefcbcdf57161d4000091/train/cpp

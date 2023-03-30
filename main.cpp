@@ -97,32 +97,32 @@ TEST(Solution, removeSmallest) {
 
 TEST(Solution, longestRepetition) {
 
-//    std::string s = "aaaabb";
-//    std::optional<std::pair<char, unsigned int>> a({'a', 4});
-//    EXPECT_EQ(solution.longestRepetition( s ), a );
-//    s = "bbbaaabaaaa";
-//    a = {'a', 4};
-//    EXPECT_EQ(solution.longestRepetition( s ), a );
-//    s = "cbdeuuu900";
-//    a = {'u', 3};
-//    EXPECT_EQ(solution.longestRepetition( s ), a );
-//    s = "abbbbb";
-//    a = {'b', 5};
-//    EXPECT_EQ(solution.longestRepetition( s ), a );
-//    s = "aabb";
-//    a = {'a', 2};
-//    EXPECT_EQ(solution.longestRepetition( s ), a );
-//    s = "";
-//    EXPECT_EQ(solution.longestRepetition( s ), std::nullopt );
-//    s = "ba";
-//    a = {'b', 1};
-//    EXPECT_EQ(solution.longestRepetition( s ), a );
-//    s = "a";
-//    a = {'a', 1};
-//    EXPECT_EQ(solution.longestRepetition( s ), a );
-//    s =  "aaaaa";
-//    a = {'a', 5};
-//    EXPECT_EQ(solution.longestRepetition( s ), a );
+    std::string s = "aaaabb";
+    std::optional<std::pair<char, unsigned int>> a({'a', 4});
+    EXPECT_EQ(solution.longestRepetition( s ), a );
+    s = "bbbaaabaaaa";
+    a = {'a', 4};
+    EXPECT_EQ(solution.longestRepetition( s ), a );
+    s = "cbdeuuu900";
+    a = {'u', 3};
+    EXPECT_EQ(solution.longestRepetition( s ), a );
+    s = "abbbbb";
+    a = {'b', 5};
+    EXPECT_EQ(solution.longestRepetition( s ), a );
+    s = "aabb";
+    a = {'a', 2};
+    EXPECT_EQ(solution.longestRepetition( s ), a );
+    s = "";
+    EXPECT_EQ(solution.longestRepetition( s ), std::nullopt );
+    s = "ba";
+    a = {'b', 1};
+    EXPECT_EQ(solution.longestRepetition( s ), a );
+    s = "a";
+    a = {'a', 1};
+    EXPECT_EQ(solution.longestRepetition( s ), a );
+    s =  "aaaaa";
+    a = {'a', 5};
+    EXPECT_EQ(solution.longestRepetition( s ), a );
 
 }
 
