@@ -254,4 +254,5 @@ std::string Solution::bmi(double w, double h) {
         return "Obese";
     }
 
+    return {};
 }
