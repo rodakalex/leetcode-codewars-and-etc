@@ -149,6 +149,17 @@ TEST(Solution, remove_parentheses) {
 
 }
 
+
+TEST(Solution, bmi) {
+
+    EXPECT_EQ(solution.bmi(81.585, 2.1), "Underweight");
+    EXPECT_EQ(solution.bmi(90.25, 1.9), "Normal");
+    EXPECT_EQ(solution.bmi(86.7, 1.7), "Overweight");
+    EXPECT_EQ(solution.bmi(200, 1.6), "Obese");
+
+}
+
+
 int main(int argc, char **argv) {
 
     ::testing::InitGoogleTest(&argc, argv);

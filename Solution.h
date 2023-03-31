@@ -25,6 +25,7 @@ public:
     std::optional<std::pair<char, unsigned int>> longestRepetition(const std::string &str);
     std::map<char, unsigned> count(const std::string& string);
     std::string remove_parentheses(const std::string &str);
+    std::string bmi(double w, double h);
 
 };
 

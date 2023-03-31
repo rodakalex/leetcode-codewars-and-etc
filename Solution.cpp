@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include <set>
+#include <cmath>
 
 #include "Solution.h"
 
@@ -234,5 +235,23 @@ std::string Solution::remove_parentheses(const std::string &str) {
     }
 
     return result;
+
+}
+
+
+// https://www.codewars.com/kata/57a429e253ba3381850000fb/train/cpp
+std::string Solution::bmi(double w, double h) {
+
+    double bmi = w / h / h;
+
+    if (bmi <= 18.5) {
+        return "Underweight";
+    } else if (bmi <= 25.0) {
+        return "Normal";
+    } else if (bmi <= 30.0) {
+        return "Overweight";
+    } else if (bmi > 30.0) {
+        return "Obese";
+    }
 
 }
