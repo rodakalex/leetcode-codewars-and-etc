@@ -160,6 +160,37 @@ TEST(Solution, bmi) {
 }
 
 
+
+TEST(Solution, sortMyString) {
+
+    EXPECT_EQ(solution.sortMyString("CodeWars"), "CdWr oeas");
+    EXPECT_EQ(solution.sortMyString("YCOLUE'VREER"), "YOU'RE CLEVER");
+}
+
+
+TEST(Solution, fixTheMeerkat) {
+
+    using a = std::array<std::string, 3>;
+
+    a a1 = {"tail", "body", "head"};
+    a a2 = {"head", "body", "tail"};
+    EXPECT_EQ(solution.fixTheMeerkat(a1), a2);
+    a1 = {"tails", "body", "heads"};
+    a2 = {"heads", "body", "tails"};
+    EXPECT_EQ(solution.fixTheMeerkat(a1), a2);
+    a1 = {"bottom", "middle", "top"};
+    a2 = {"top", "middle", "bottom"};
+    EXPECT_EQ(solution.fixTheMeerkat(a1), a2);
+    a1 = {"lower legs", "torso", "upper legs"};
+    a2 = {"upper legs", "torso", "lower legs"};
+    EXPECT_EQ(solution.fixTheMeerkat(a1), a2);
+    a1 = {"ground", "rainbow", "sky"};
+    a2 = {"sky", "rainbow", "ground"};
+    EXPECT_EQ(solution.fixTheMeerkat(a1), a2);
+
+}
+
+
 int main(int argc, char **argv) {
 
     ::testing::InitGoogleTest(&argc, argv);

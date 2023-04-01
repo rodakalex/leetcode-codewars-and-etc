@@ -26,7 +26,8 @@ public:
     std::map<char, unsigned> count(const std::string& string);
     std::string remove_parentheses(const std::string &str);
     std::string bmi(double w, double h);
-
+    std::string sortMyString(const std::string &s);
+    std::array<std::string, 3> fixTheMeerkat(std::array<std::string, 3> arr);
 };
 
 

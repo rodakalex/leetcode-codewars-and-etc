@@ -238,6 +238,25 @@ std::string Solution::remove_parentheses(const std::string &str) {
 
 }
 
+// https://www.codewars.com/kata/580755730b5a77650500010c/train/cpp
+std::string Solution::sortMyString(const std::string &s) {
+
+    std::string result;
+
+    for (int i = 0; i < s.size(); i += 2) {
+        result += s[i];
+    }
+
+    result += " ";
+
+    for (int i = 1; i < s.size(); i += 2) {
+        result += s[i];
+    }
+
+    return result;
+
+}
+
 
 // https://www.codewars.com/kata/57a429e253ba3381850000fb/train/cpp
 std::string Solution::bmi(double w, double h) {
@@ -255,4 +274,12 @@ std::string Solution::bmi(double w, double h) {
     }
 
     return {};
+}
+
+
+// https://www.codewars.com/kata/56f699cd9400f5b7d8000b55/train/cpp
+std::array<std::string, 3> Solution::fixTheMeerkat(std::array<std::string, 3> arr) {
+
+    return std::array<std::string, 3> {arr[2], arr[1], arr[0]};
+
 }
