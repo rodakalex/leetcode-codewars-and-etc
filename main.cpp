@@ -191,6 +191,17 @@ TEST(Solution, fixTheMeerkat) {
 }
 
 
+TEST(Solution, is_cube) {
+
+    EXPECT_EQ(solution.is_cube(1, 1), true);
+    EXPECT_EQ(solution.is_cube(8, 2), true);
+    EXPECT_EQ(solution.is_cube(7, 2), false);
+    EXPECT_EQ(solution.is_cube(0, 0), false);
+
+
+}
+
+
 int main(int argc, char **argv) {
 
     ::testing::InitGoogleTest(&argc, argv);

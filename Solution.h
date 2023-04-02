@@ -28,6 +28,7 @@ public:
     std::string bmi(double w, double h);
     std::string sortMyString(const std::string &s);
     std::array<std::string, 3> fixTheMeerkat(std::array<std::string, 3> arr);
+    bool is_cube(int volume, int side);
 };
 
 

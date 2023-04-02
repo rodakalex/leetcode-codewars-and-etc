@@ -283,3 +283,14 @@ std::array<std::string, 3> Solution::fixTheMeerkat(std::array<std::string, 3> ar
     return std::array<std::string, 3> {arr[2], arr[1], arr[0]};
 
 }
+
+// https://www.codewars.com/kata/58d248c7012397a81800005c/train/cpp
+bool Solution::is_cube(int volume, int side) {
+
+    if (side > 0 and side * side * side == volume) {
+        return true;
+    }
+
+    return false;
+
+}
