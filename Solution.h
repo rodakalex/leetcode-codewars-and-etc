@@ -13,6 +13,7 @@
 class Solution {
 
 public:
+
     std::vector<int> sortArray(std::vector<int>& nums);
     int compress(std::vector<char>& chars);
     int findKthPositive(std::vector<int>& arr, int k);
@@ -29,6 +30,8 @@ public:
     std::string sortMyString(const std::string &s);
     std::array<std::string, 3> fixTheMeerkat(std::array<std::string, 3> arr);
     bool is_cube(int volume, int side);
+    bool validParentheses(const std::string& str);
+
 };
 
 

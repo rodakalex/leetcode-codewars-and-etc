@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Solution.h"
+
 #include "gtest/gtest.h"
+
 
 Solution solution;
 
@@ -198,6 +200,24 @@ TEST(Solution, is_cube) {
     EXPECT_EQ(solution.is_cube(7, 2), false);
     EXPECT_EQ(solution.is_cube(0, 0), false);
 
+
+}
+
+TEST(Solution, validParentheses) {
+
+    EXPECT_EQ(solution.validParentheses("()"), true);
+    EXPECT_EQ(solution.validParentheses("((()))"), true);
+    EXPECT_EQ(solution.validParentheses("()()()"), true);
+    EXPECT_EQ(solution.validParentheses("(()())()"), true);
+    EXPECT_EQ(solution.validParentheses("()(())((()))(())()"), true);
+
+    EXPECT_EQ(solution.validParentheses(")("), false);
+    EXPECT_EQ(solution.validParentheses("()()("), false);
+    EXPECT_EQ(solution.validParentheses("((())"), false);
+    EXPECT_EQ(solution.validParentheses("())(()"), false);
+    EXPECT_EQ(solution.validParentheses(")()"), false);
+    EXPECT_EQ(solution.validParentheses(")()"), false);
+    EXPECT_EQ(solution.validParentheses(")"), false);
 
 }
 

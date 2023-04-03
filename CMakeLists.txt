@@ -22,3 +22,4 @@ target_link_libraries(leetcode gtest gtest_main)
 
 #Link with GoogleMock
 target_link_libraries(leetcode gmock gmock_main)
+

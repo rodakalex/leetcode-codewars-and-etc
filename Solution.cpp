@@ -4,6 +4,7 @@
 #include <iostream>
 #include <set>
 #include <cmath>
+#include <stack>
 
 #include "Solution.h"
 
@@ -292,5 +293,24 @@ bool Solution::is_cube(int volume, int side) {
     }
 
     return false;
+
+}
+
+// https://www.codewars.com/kata/6411b91a5e71b915d237332d/train/cpp
+bool Solution::validParentheses(const std::string &str) {
+
+    std::stack<char> st;
+
+    for (char c : str) {
+        if (c == '(') {
+            st.push(c);
+        } else if (!st.empty()){
+            st.pop();
+        } else {
+            return false;
+        }
+    }
+
+    return st.empty();
 
 }
