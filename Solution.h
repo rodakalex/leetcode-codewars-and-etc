@@ -31,6 +31,7 @@ public:
     std::array<std::string, 3> fixTheMeerkat(std::array<std::string, 3> arr);
     bool is_cube(int volume, int side);
     bool validParentheses(const std::string& str);
+    int sum_even_numbers(const std::vector<double> &seq);
 
 };
 

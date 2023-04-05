@@ -314,3 +314,21 @@ bool Solution::validParentheses(const std::string &str) {
     return st.empty();
 
 }
+
+// https://www.codewars.com/kata/586beb5ba44cfc44ed0006c3/train/cpp
+int Solution::sum_even_numbers(const std::vector<double> &seq) {
+
+    int result = 0, temp;
+    double i;
+    for (double d : seq) {
+        if (std::modf(d, &i) == 0) {
+            temp = (int)d;
+            if (temp % 2 == 0) {
+                result += temp;
+            }
+        }
+    }
+
+    return result;
+
+}

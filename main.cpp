@@ -222,6 +222,22 @@ TEST(Solution, validParentheses) {
 }
 
 
+TEST(Solution, sum_even_numbers) {
+
+    std::vector<double> seq;
+    seq = { 1, 2.1, 3, 4.6, 5, 6.0, 7, 7.9, 9, 10 };
+    EXPECT_EQ(solution.sum_even_numbers(seq), 16);
+    seq = { };
+    EXPECT_EQ(solution.sum_even_numbers(seq), 0);
+    seq = { 1337, 374.0, 849, 23.943, 19, 16.5, 0, 0, 16.0, 32.15 };
+    EXPECT_EQ(solution.sum_even_numbers(seq), 390);
+    seq = { -16.0, -32.0, 20, 21, 41.0, 42 };
+    EXPECT_EQ(solution.sum_even_numbers(seq), 14);
+    seq = { -386, 533.695, 798, 753.002, -64, -223.342, -402, -135.645, 218, 740.91, -460, -269.747, 129, 411.14, -417, 105.597, 981, 138.092, 86, 452.435, 983, 502.788, 517, 592.567, 900, 299.157, 382, -193.048, 702, 92.5302, -469, 443.874, 240, 311.666, 846, 231.458, -66, 222.228, 673, 24.2452, 215, 708.5, -51, 983.738, 584, 176.021, -332, 943.071, -116, 417.569, 495, 202.943, 254, 187.724, 216, -249.855, 355, 266.658, 144, -54.1478 };
+    EXPECT_EQ(solution.sum_even_numbers(seq), 3544);
+}
+
+
 int main(int argc, char **argv) {
 
     ::testing::InitGoogleTest(&argc, argv);
